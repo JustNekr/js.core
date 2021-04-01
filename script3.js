@@ -26,9 +26,15 @@ let basket = [
 ]
 // как вы и говорили, 0 - название, 1 - количество, 2 - стоимость
 
+// function countBasketPrice(arr) {
+//     let productsCosts = arr.map(item => item[1] * item[2]);
+//     productsCosts = productsCosts.reduce((sum, current) => sum + current, 0);
+//     return productsCosts;
+// }
+// alert(`Общая стоимость корзины: ${countBasketPrice(basket)}`);
+
 function countBasketPrice(arr) {
-    let productsCosts = arr.map(item => item[1] * item[2]);
-    productsCosts = productsCosts.reduce((sum, current) => sum + current, 0);
+    let productsCosts = arr.reduce((sum, current) => current[1] * current[2] + sum, 0);
     return productsCosts;
 }
 alert(`Общая стоимость корзины: ${countBasketPrice(basket)}`);
